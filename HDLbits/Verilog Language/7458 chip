@@ -1,0 +1,16 @@
+module top_module (p1a,p2a,p2b,p2c,p2d,p2y,p1c,p1b,p1f,p1e,p1d,p1y);
+    input p1a,p2a,p2b,p2c,p2d,p1c,p1b,p1f,p1e,p1d;
+    output p2y,p1y;
+    wire and_nor1;
+    wire and_nor2;
+    wire and_nor3;
+    wire and_nor4;
+    
+    assign and_nor1 = p1a & p1c & p1b;
+    assign and_nor2 = p1f & p1e & p1d;
+    assign and_nor3 = p2a & p2b;
+    assign and_nor4 = p2c & p2d;
+    assign p1y = and_nor1 | and_nor2;
+    assign p2y = and_nor3 | and_nor4;
+
+endmodule
