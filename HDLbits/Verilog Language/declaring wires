@@ -1,0 +1,15 @@
+`default_nettype none
+module top_module(a,b,c,d,out,out_n);
+    input a,b,c,d;
+    output out,out_n;
+    wire and_nor1;
+    wire and_nor2;
+    wire nor_out;
+    
+    assign and_nor1 = a & b;
+    assign and_nor2 = c & d;
+    assign nor_out = and_nor1 | and_nor2;
+    assign out = nor_out;
+    assign out_n = ~nor_out;
+
+endmodule
