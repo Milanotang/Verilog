@@ -1,0 +1,25 @@
+module top_module( 
+    input [7:0] in,
+    output [7:0] out
+);
+    
+    assign out [0] = in[7];
+    assign out [1] = in[6];
+    assign out [2] = in[5];
+    assign out [3] = in[4];
+    assign out [4] = in[3];
+    assign out [5] = in[2];
+    assign out [6] = in[1];
+    assign out [7] = in[0];
+    
+endmodule
+
+//输出信号out是从0到1进行排列的，因此可以将左边的输出用一个out进行替换；对右边的输入信号使用连接符进行连接
+module top_module( 
+    input [7:0] in,
+    output [7:0] out
+);
+    
+  assign out = {in[0],in[1],in[2],in[3],in[4],in[5],in[6],in[7]};//输出的信号是从高位到低位进行排列的，因此输入的信号需要反过来从低位到高位进行排列
+    
+endmodule
